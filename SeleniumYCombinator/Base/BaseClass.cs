@@ -18,7 +18,9 @@ namespace SeleniumYCombinator.Base
         {
 
             driver = new ChromeDriver();
+
             driver.Url = "https://news.ycombinator.com/news";
+
         }
 
         [TearDown]
@@ -26,6 +28,5 @@ namespace SeleniumYCombinator.Base
         {
             driver.Quit();
         }
-
     }
 }

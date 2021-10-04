@@ -12,11 +12,12 @@ namespace SeleniumYCombinator
     {
 
         [Test]
-        public void Test1()
+        public void TestForNews()
         {
             NewsClass news = new NewsClass();
             news.NewsHeadlines();
             news.RetrievePoints();
+            news.RetrieveHeadlines();
         }
     }
 }
