@@ -19,5 +19,12 @@ namespace SeleniumYCombinator
             news.RetrievePoints();
             news.RetrieveHeadlines();
         }
+
+        [Test]
+        public void TestForNews1()
+        {
+            Headlines c = new Headlines();
+            c.NewsHeadlines();
+        }
     }
 }
