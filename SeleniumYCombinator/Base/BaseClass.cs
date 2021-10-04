@@ -7,7 +7,6 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-
 namespace SeleniumYCombinator.Base
 {
     public class BaseClass

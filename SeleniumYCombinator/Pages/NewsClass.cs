@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
  * Project:Ycobinator Application-Selenium WebDriver
  * Author:Sona G
  * Date :22/09/2021
