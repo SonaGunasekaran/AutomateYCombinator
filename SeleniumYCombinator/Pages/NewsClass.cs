@@ -41,7 +41,6 @@ namespace SeleniumYCombinator.Pages
                     {
                         //If the string is null then remove it
                         headline.Remove(n.Text);
-
                     }
                 }
             }
@@ -67,7 +66,7 @@ namespace SeleniumYCombinator.Pages
                         if (!string.IsNullOrEmpty(value))
                         {
                             int i = int.Parse(value);
-                            //Add the integer value into the list
+                            //Adding integer value into the list
                             sorting.Add(i);
                             Console.WriteLine("Headline Points : {0}", i);
                         }
@@ -90,6 +89,36 @@ namespace SeleniumYCombinator.Pages
             {
                 Console.WriteLine("Highest value:{0}", g);
             }
+        }
+
+        public void RetrieveHeadlines()
+        {
+            foreach (var n in driver.FindElements(By.XPath("//*[@class='storylink']")))
+            {
+                //Check whether the string is null or not
+                if (!string.IsNullOrEmpty(n.Text))
+                {
+                    // Add the text into a list
+                    string result = n.Text;
+
+                    headline.Add(result);
+                    //Split the list
+                    headline = result.Split(" ").ToList();
+
+                }
+            }
+            FrequentOccuredWord();
+        }
+
+        public void FrequentOccuredWord()
+        {
+            Console.WriteLine("****************Frequent Occured Word*****************");
+            var most = headline.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).Where(x => x != null).Last();
+
+            int count = headline.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).Where(x => x != null).Last().Count();
+            
+            Console.WriteLine("Highest value:{0} {1}", most, count);
+
         }
     }
 }
